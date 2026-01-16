@@ -1,0 +1,1877 @@
+<?xml version="1.0" encoding="UTF-8"  ?>
+<!-- Created with iReport - A designer for JasperReports -->
+<!DOCTYPE jasperReport PUBLIC "//JasperReports//DTD Report Design//EN" "http://jasperreports.sourceforge.net/dtds/jasperreport.dtd">
+<jasperReport
+		 name="Informe_Rendimento (1)"
+		 columnCount="1"
+		 printOrder="Vertical"
+		 orientation="Portrait"
+		 pageWidth="595"
+		 pageHeight="850"
+		 columnWidth="535"
+		 columnSpacing="0"
+		 leftMargin="30"
+		 rightMargin="30"
+		 topMargin="20"
+		 bottomMargin="20"
+		 whenNoDataType="NoPages"
+		 isTitleNewPage="false"
+		 isSummaryNewPage="false">
+	<property name="ireport.scriptlethandling" value="0" />
+	<property name="ireport.encoding" value="UTF-8" />
+	<import value="java.util.*" />
+	<import value="net.sf.jasperreports.engine.*" />
+	<import value="net.sf.jasperreports.engine.data.*" />
+
+	<parameter name="PARAM_FIG1" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["D:/Atlantic_Java/WorkSpace-novo/spprev/web/jsp/images/80px-Brasao_Estado_SaoPaulo_Brasil_svg.png"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="PARAM_FIG2" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dataSourceInfComplementares" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="REPORT_BASE_PATH" isForPrompting="false" class="java.lang.String">
+		<defaultValueExpression ><![CDATA["D:/Atlantic_Java/iReport-3.0.0"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="cpfFormatado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="cnpjFormatado" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="razaoSocial" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="endereco" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="cidade" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="uf" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="anoCalendario" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nomeCompleto" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="naturezaRendimento" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlTotalRendimentos" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlContribuicaoOficial" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlContribuicaoPrivada" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlPensaoAlimenticia" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlImpostoRetidoFonte" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlParteIsenta" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlAjudaCusto" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlPensao" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlAbonosSalariais" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlSalarioFamilia" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlOutrosIsentos" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlDecimoTerceiro" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlOutrosTributaveis" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nrMes_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="totRend_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="contrOficial_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="pensAlim_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="impRetFonte_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="rendIsentos_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="acaoJudicial_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_01" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_02" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_03" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_04" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_05" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_06" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_07" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_08" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_09" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_10" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_11" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dtReceb_12" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="observacao" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlDecimoTerceiroIR" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dataSourceAlimentados" isForPrompting="false" class="java.lang.Object"/>
+	<parameter name="mostrarAlimentados" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="nomeResponsavelInformacoes" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="dataResponsavelInformacoes" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="PARAM_FIG_VERSO" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="numProntuario" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlIndenizacoes" isForPrompting="true" class="java.lang.String">
+		<defaultValueExpression ><![CDATA[new String("")]]></defaultValueExpression>
+	</parameter>
+	<parameter name="vlRendTribRra" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlAcaoJudRra" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlPrevRra" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlPaRra" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlIrRra" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="vlMolestiaRra" isForPrompting="false" class="java.lang.String"/>
+	<parameter name="qtdMesesRra" isForPrompting="false" class="java.lang.String"/>
+
+	<variable name="fqqfwqf" class="java.lang.String" resetType="Report" calculation="Nothing">
+	</variable>
+	<variable name="Texto" class="java.lang.String" resetType="Report" calculation="Nothing">
+	</variable>
+
+		<group  name="cabecalho_2" isReprintHeaderOnEachPage="true" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="0"  isSplitAllowed="true" >
+				<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue() > 1) ]]></printWhenExpression>
+				<frame>					<reportElement
+						x="682"
+						y="-127"
+						width="1"
+						height="0"
+						key="frame-1"/>
+					<box></box>
+				</frame>				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="-184"
+						width="0"
+						height="64"
+						key="line-169"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="534"
+						y="-184"
+						width="0"
+						height="64"
+						key="line-170"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="detail_2" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="180"  isSplitAllowed="true" >
+				<staticText>
+					<reportElement
+						x="6"
+						y="6"
+						width="74"
+						height="10"
+						key="staticText-152"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[OBSERVAÇÃO:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="6"
+						y="17"
+						width="526"
+						height="125"
+						key="textField-124"
+						stretchType="RelativeToTallestObject"
+						isRemoveLineWhenBlank="true"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement textAlignment="Left" markup="html">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{observacao}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7"
+						y="163"
+						width="172"
+						height="15"
+						key="textField-126"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement textAlignment="Left">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{nomeResponsavelInformacoes}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="221"
+						y="163"
+						width="134"
+						height="15"
+						key="textField-127"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{dataResponsavelInformacoes}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="149"
+						width="88"
+						height="8"
+						key="textField-128"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["ASSINATURA"]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="442"
+						y="159"
+						width="89"
+						height="18"
+						key="textField-129"
+						positionType="Float"
+						isRemoveLineWhenBlank="true"
+						isPrintWhenDetailOverflows="true"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font size="6"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA["Dispensa assinatura conforme IN RFB Nº 1215/2011"]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="426"
+						y="149"
+						width="0"
+						height="30"
+						key="line-173"
+						positionType="Float"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="-14"
+						width="0"
+						height="193"
+						key="line-178"
+						stretchType="RelativeToTallestObject"/>
+					<graphicElement stretchType="RelativeToTallestObject">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="534"
+						y="-3"
+						width="0"
+						height="182"
+						key="line-179"
+						stretchType="RelativeToTallestObject"/>
+					<graphicElement stretchType="RelativeToTallestObject">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="144"
+						width="535"
+						height="0"
+						key="line-182"
+						positionType="Float"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="147"
+						width="535"
+						height="0"
+						key="line-183"
+						positionType="Float"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="179"
+						width="535"
+						height="0"
+						key="line-184"
+						positionType="Float"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="5"
+						y="149"
+						width="399"
+						height="14"
+						key="textField"
+						positionType="Float"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" size="8" isBold="true"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[($P{mostrarAlimentados}.equals("S") ? "8" : "7") + ". RESPONSÁVEL PELAS INFORMAÇÕES"]]></textFieldExpression>
+				</textField>
+			</band>
+			</groupFooter>
+		</group>
+		<group  name="Teste" >
+			<groupExpression><![CDATA[]]></groupExpression>
+			<groupHeader>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+			</groupHeader>
+			<groupFooter>
+			<band height="28"  isSplitAllowed="true" >
+				<rectangle>
+					<reportElement
+						mode="Transparent"
+						x="6"
+						y="1"
+						width="524"
+						height="14"
+						key="rectangle-6"
+						positionType="Float"
+						isRemoveLineWhenBlank="true">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</rectangle>
+				<subreport  isUsingCache="true">
+					<reportElement
+						x="0"
+						y="15"
+						width="534"
+						height="13"
+						key="subreport-2"
+						stretchType="RelativeToTallestObject"
+						isPrintRepeatedValues="false"
+						isRemoveLineWhenBlank="true"/>
+					<dataSourceExpression><![CDATA[$P{dataSourceAlimentados}]]></dataSourceExpression>
+					<subreportExpression  class="java.lang.String"><![CDATA[$P{REPORT_BASE_PATH} + "/Informe_Rendimentos_Alimentados_detalhe.jasper"]]></subreportExpression>
+				</subreport>
+				<staticText>
+					<reportElement
+						x="7"
+						y="3"
+						width="225"
+						height="14"
+						key="staticText-154"
+						isRemoveLineWhenBlank="true">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="9" isBold="true"/>
+					</textElement>
+				<text><![CDATA[7. PENSÃO ALIMENTÍCIA]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="426"
+						y="1"
+						width="0"
+						height="14"
+						key="line-175">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="534"
+						y="0"
+						width="0"
+						height="15"
+						key="line-176">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="0"
+						y="0"
+						width="0"
+						height="15"
+						key="line-177">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="429"
+						y="3"
+						width="103"
+						height="12"
+						key="staticText-160">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VALORES 13º EM REAIS (R$)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="317"
+						y="3"
+						width="103"
+						height="12"
+						key="staticText-164">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VALORES EM REAIS (R$)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="313"
+						y="1"
+						width="0"
+						height="14"
+						key="line-187">
+							<printWhenExpression><![CDATA[new Boolean($P{mostrarAlimentados}.equals("S"))]]></printWhenExpression>
+						</reportElement>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+			</groupFooter>
+		</group>
+		<background>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</background>
+		<title>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</title>
+		<pageHeader>
+			<band height="510"  isSplitAllowed="true" >
+				<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue() == 1)]]></printWhenExpression>
+				<rectangle>
+					<reportElement
+						mode="Transparent"
+						x="6"
+						y="64"
+						width="525"
+						height="440"
+						key="rectangle-3"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</rectangle>
+				<image  scaleImage="FillFrame" vAlign="Top" hAlign="Left" isUsingCache="false" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						mode="Opaque"
+						x="6"
+						y="4"
+						width="46"
+						height="44"
+						forecolor="#000000"
+						backcolor="#FFFFFF"
+						key="image-1"/>
+					<box></box>
+					<graphicElement stretchType="NoStretch" fill="Solid" />
+					<imageExpression class="java.lang.String"><![CDATA[$P{PARAM_FIG1}]]></imageExpression>
+				</image>
+				<staticText>
+					<reportElement
+						x="168"
+						y="5"
+						width="201"
+						height="11"
+						key="staticText-1"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<text><![CDATA[MINISTÉRIO DA FAZENDA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="168"
+						y="17"
+						width="201"
+						height="14"
+						key="staticText-2"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[SECRETARIA DA RECEITA FEDERAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="141"
+						y="34"
+						width="256"
+						height="26"
+						key="staticText-3"/>
+					<box></box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[COMPROVANTE DE RENDIMENTOS PAGOS E DE RETENÇÃO DE IMPOSTO DE RENDA NA FONTE]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="1"
+						y="1"
+						width="534"
+						height="0"
+						key="line-7"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.501" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						mode="Opaque"
+						x="0"
+						y="0"
+						width="0"
+						height="509"
+						key="line-3"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="534"
+						y="1"
+						width="0"
+						height="509"
+						key="line-4"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="6"
+						y="64"
+						width="253"
+						height="12"
+						key="staticText-9"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[1. FONTE PAGADORA PESSOA JURÍDICA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13"
+						y="76"
+						width="57"
+						height="12"
+						key="staticText-53"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CNPJ:]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="96"
+						width="525"
+						height="0"
+						key="line-57"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13"
+						y="84"
+						width="218"
+						height="11"
+						key="textField"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{cnpjFormatado}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="14"
+						y="97"
+						width="126"
+						height="12"
+						key="staticText-89"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[RAZÃO SOCIAL / NOME]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="14"
+						y="107"
+						width="218"
+						height="11"
+						key="textField-5"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{razaoSocial}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="119"
+						width="525"
+						height="0"
+						key="line-91"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="6"
+						y="120"
+						width="253"
+						height="12"
+						key="staticText-93"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[2. PESSOA FÍSICA BENEFICIÁRIA DOS RENDIMENTOS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="13"
+						y="132"
+						width="98"
+						height="12"
+						key="staticText-94"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[ANO / CALENDÁRIO:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="13"
+						y="142"
+						width="98"
+						height="11"
+						key="textField-9"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{anoCalendario}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="7"
+						y="153"
+						width="133"
+						height="12"
+						key="staticText-95"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NATUREZA DO RENDIMENTO:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="7"
+						y="163"
+						width="375"
+						height="11"
+						key="textField-10"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{naturezaRendimento}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="151"
+						width="525"
+						height="0"
+						key="line-93"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="131"
+						width="525"
+						height="0"
+						key="line-94"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="173"
+						width="525"
+						height="0"
+						key="line-95"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="128"
+						y="132"
+						width="0"
+						height="20"
+						key="line-96"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="135"
+						y="132"
+						width="83"
+						height="12"
+						key="staticText-96"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[CPF:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="135"
+						y="142"
+						width="84"
+						height="11"
+						key="textField-11"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{cpfFormatado}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="238"
+						y="132"
+						width="0"
+						height="20"
+						key="line-97"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="245"
+						y="131"
+						width="105"
+						height="12"
+						key="staticText-97"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[NOME COMPLETO:]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="245"
+						y="141"
+						width="285"
+						height="11"
+						key="textField-12"/>
+					<box></box>
+					<textElement>
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{nomeCompleto}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="6"
+						y="176"
+						width="362"
+						height="12"
+						key="staticText-98"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[3. RENDIMENTOS TRIBUTÁVEIS, DEDUÇÕES E IMPOSTO RETIDO NA FONTE]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="188"
+						width="525"
+						height="0"
+						key="line-99"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="426"
+						y="178"
+						width="0"
+						height="326"
+						key="line-100"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="426"
+						y="175"
+						width="105"
+						height="12"
+						key="staticText-99"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VALORES EM REAIS (R$)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="201"
+						width="525"
+						height="0"
+						key="line-101"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="13"
+						y="189"
+						width="355"
+						height="12"
+						key="staticText-100"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[01 - TOTAL DOS RENDIMENTOS]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="189"
+						width="93"
+						height="11"
+						key="textField-13"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlTotalRendimentos}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="202"
+						width="355"
+						height="12"
+						key="staticText-101"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[02 - CONTRIBUIÇÃO PREVIDENCIÁRIA OFICIAL]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="214"
+						width="525"
+						height="0"
+						key="line-102"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="202"
+						width="93"
+						height="11"
+						key="textField-14"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlContribuicaoOficial}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="214"
+						width="355"
+						height="12"
+						key="staticText-102"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[03 - CONTRIBUIÇÃO PREVIDENCIÁRIA PRIVADA E A FAPI]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="226"
+						width="525"
+						height="0"
+						key="line-103"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="214"
+						width="93"
+						height="11"
+						key="textField-15"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlContribuicaoPrivada}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="226"
+						width="355"
+						height="12"
+						key="staticText-103"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[04 - PENSÃO ALIMENTÍCIA]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="238"
+						width="525"
+						height="0"
+						key="line-104"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="226"
+						width="93"
+						height="11"
+						key="textField-16"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlPensaoAlimenticia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="238"
+						width="355"
+						height="12"
+						key="staticText-104"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[05 - IMPOSTO RETIDO NA FONTE]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="238"
+						width="93"
+						height="11"
+						key="textField-17"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlImpostoRetidoFonte}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="249"
+						width="525"
+						height="0"
+						key="line-106"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="6"
+						y="250"
+						width="362"
+						height="12"
+						key="staticText-105"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[4. RENDIMENTOS ISENTOS E NÃO TRIBUTÁVEIS]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="263"
+						width="525"
+						height="0"
+						key="line-107"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="426"
+						y="250"
+						width="103"
+						height="12"
+						key="staticText-106"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VALORES EM REAIS (R$)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="275"
+						width="525"
+						height="0"
+						key="line-109"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="13"
+						y="263"
+						width="407"
+						height="12"
+						key="staticText-107"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[01 - PARTE ISENTA DOS PROVENTOS DE APOSENTADORIA, RESERVA, REFORMA E PENSÃO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="263"
+						width="93"
+						height="11"
+						key="textField-18"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlParteIsenta}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="275"
+						width="355"
+						height="12"
+						key="staticText-108"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[02 - DIÁRIAS, AJUDA DE CUSTO E BOLSAS DE ESTUDO]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="287"
+						width="525"
+						height="0"
+						key="line-110"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="275"
+						width="93"
+						height="11"
+						key="textField-19"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlAjudaCusto}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="287"
+						width="355"
+						height="12"
+						key="staticText-109"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[03 - PENSÃO E PROVENTOS DE APOSENTADORIA OU REFORMA POR MOLÉSTIA GRAVE]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="299"
+						width="525"
+						height="0"
+						key="line-111"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="287"
+						width="93"
+						height="11"
+						key="textField-20"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlPensao}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="299"
+						width="355"
+						height="12"
+						key="staticText-110"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[04 - ABONOS SALARIAIS E ABONOS / RENDIMENTO (PIS/PASEP)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="311"
+						width="525"
+						height="0"
+						key="line-112"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="299"
+						width="93"
+						height="11"
+						key="textField-21"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlAbonosSalariais}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="312"
+						width="355"
+						height="12"
+						key="staticText-111"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[05 - SALÁRIO FAMÍLIA]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="324"
+						width="525"
+						height="0"
+						key="line-113"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="312"
+						width="93"
+						height="11"
+						key="textField-22"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlSalarioFamilia}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="338"
+						width="355"
+						height="12"
+						key="staticText-112"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[07 - OUTROS]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="338"
+						width="93"
+						height="11"
+						key="textField-23"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlOutrosIsentos}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="336"
+						width="525"
+						height="0"
+						key="line-114"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="6"
+						y="351"
+						width="362"
+						height="12"
+						key="staticText-113"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<text><![CDATA[5. RENDIMENTOS SUJEITOS À TRIBUTAÇÃO EXCLUSIVA (LÍQUIDO)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="350"
+						width="525"
+						height="0"
+						key="line-115"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="426"
+						y="351"
+						width="103"
+						height="12"
+						key="staticText-114"/>
+					<box></box>
+					<textElement textAlignment="Center">
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="7" isBold="true"/>
+					</textElement>
+				<text><![CDATA[VALORES EM REAIS (R$)]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="364"
+						width="93"
+						height="11"
+						key="textField-24"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlDecimoTerceiro}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="13"
+						y="364"
+						width="407"
+						height="12"
+						key="staticText-115"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[01 - DÉCIMO TERCEIRO SALÁRIO]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="375"
+						width="525"
+						height="0"
+						key="line-116"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="13"
+						y="389"
+						width="355"
+						height="12"
+						key="staticText-116"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[03 - OUTROS]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="389"
+						width="93"
+						height="11"
+						key="textField-25"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlOutrosTributaveis}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="362"
+						width="525"
+						height="0"
+						key="line-168"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="13"
+						y="377"
+						width="355"
+						height="12"
+						key="staticText-153"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[02 - IMPOSTO SOBRE A RENDA RETIDO NA FONTE SOBRE 13º SALÁRIO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="377"
+						width="93"
+						height="11"
+						key="textField-125"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlDecimoTerceiroIR}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="75"
+						width="525"
+						height="0"
+						key="line-180"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="389"
+						width="525"
+						height="0"
+						key="line-188"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="13"
+						y="325"
+						width="407"
+						height="12"
+						key="staticText-165"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[06 - INDENIZAÇÕES POR RESCISÃO DE CONTRATO DE TRABALHO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="434"
+						y="324"
+						width="93"
+						height="11"
+						key="textField-134"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlIndenizacoes}]]></textFieldExpression>
+				</textField>
+				<staticText>
+					<reportElement
+						x="7"
+						y="402"
+						width="362"
+						height="12"
+						key="staticText-166"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica" size="8" isBold="false"/>
+					</textElement>
+				<text><![CDATA[6. RENDIMENTOS RECEBIDOS ACUMULADAMENTE - ART. 12-A DA LEI Nº 7.713, DE 1988 (SUJEITOS À TRIBUTAÇÃO EXCLUSIVA)]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="415"
+						width="354"
+						height="12"
+						key="staticText-167"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[01. TOTAL DOS RENDIMENTOS TRIBUTÁVEIS (INCLUSIVE FÉRIAS E DÉCIMO) TERCEIRO SALÁRIO)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="427"
+						width="525"
+						height="0"
+						key="line-190"/>
+					<graphicElement stretchType="NoStretch">
+					<pen lineWidth="0.5" lineStyle="Solid"/>
+</graphicElement>
+				</line>
+				<staticText>
+					<reportElement
+						x="14"
+						y="442"
+						width="355"
+						height="12"
+						key="staticText-168"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[03. DEDUÇÃO: CONTRIBUIÇÃO PREVIDENCIÁRIA OFICIAL]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="414"
+						width="525"
+						height="0"
+						key="line-191"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="14"
+						y="428"
+						width="355"
+						height="12"
+						key="staticText-169"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[02. EXCLUSÃO: DESPESAS COM A AÇÃO JUDICIAL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement
+						x="14"
+						y="454"
+						width="355"
+						height="12"
+						key="staticText-170"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[04. DEDUÇÃO: PENSÃO ALIMENTÍCIA (PREENCHER TAMBÉM O QUADRO 7)]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="453"
+						width="525"
+						height="0"
+						key="line-193"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="14"
+						y="465"
+						width="355"
+						height="12"
+						key="staticText-171"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[05. IMPOSTO SOBRE A RENDA RETIDO NA FONTE]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="464"
+						width="525"
+						height="0"
+						key="line-194"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="14"
+						y="478"
+						width="355"
+						height="12"
+						key="staticText-172"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[06. RENDIMENTOS ISENTOS DE PENSÃO, PROVENTOS DE APOSENTADORIA OU REFORMA POR MOLÉSTIA GRAVE OU APOSENTADORIA OU REFORMA POR ACIDENTE EM
+SERVIÇO]]></text>
+				</staticText>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="477"
+						width="525"
+						height="0"
+						key="line-195"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="415"
+						width="93"
+						height="11"
+						key="textField-135"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlRendTribRra}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="429"
+						width="93"
+						height="11"
+						key="textField-136"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlAcaoJudRra}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="442"
+						width="93"
+						height="11"
+						key="textField-137"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlPrevRra}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="453"
+						width="93"
+						height="11"
+						key="textField-138"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlPaRra}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="465"
+						width="93"
+						height="11"
+						key="textField-139"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlIrRra}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="478"
+						width="93"
+						height="11"
+						key="textField-140"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{vlMolestiaRra}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="401"
+						width="525"
+						height="0"
+						key="line-196"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<staticText>
+					<reportElement
+						x="14"
+						y="492"
+						width="355"
+						height="12"
+						key="staticText-173"/>
+					<box></box>
+					<textElement>
+						<font fontName="Verdana" pdfFontName="Helvetica-Bold" size="8" isBold="true"/>
+					</textElement>
+				<text><![CDATA[07. QUANTIDADE DE MESES
+SERVIÇO]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="false" isBlankWhenNull="true" evaluationTime="Now" hyperlinkType="None"  hyperlinkTarget="Self" >
+					<reportElement
+						x="435"
+						y="493"
+						width="93"
+						height="11"
+						key="textField-141"/>
+					<box></box>
+					<textElement textAlignment="Right">
+						<font size="8"/>
+					</textElement>
+				<textFieldExpression   class="java.lang.String"><![CDATA[$P{qtdMesesRra}]]></textFieldExpression>
+				</textField>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="441"
+						width="525"
+						height="0"
+						key="line-198"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+				<line direction="TopDown">
+					<reportElement
+						x="6"
+						y="491"
+						width="525"
+						height="0"
+						key="line-199"/>
+					<graphicElement stretchType="NoStretch"/>
+				</line>
+			</band>
+		</pageHeader>
+		<columnHeader>
+			<band height="0"  isSplitAllowed="true" >
+				<printWhenExpression><![CDATA[new Boolean($V{PAGE_NUMBER}.intValue() == 1)]]></printWhenExpression>
+			</band>
+		</columnHeader>
+		<detail>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</detail>
+		<columnFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</columnFooter>
+		<pageFooter>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</pageFooter>
+		<summary>
+			<band height="0"  isSplitAllowed="true" >
+			</band>
+		</summary>
+</jasperReport>
