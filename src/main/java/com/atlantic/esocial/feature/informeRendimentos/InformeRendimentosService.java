@@ -230,7 +230,7 @@ public class InformeRendimentosService {
         Map<String, Object> params = new HashMap<>();
 
         // parâmetros básicos / identificadores
-        params.put("CPF_BENEFICIARIO", cpf);
+        params.put("CPF_BENEFICIARIO", formatarCpfSePossivel(cpf));
         String nomeBeneficiario = buscarNomeBeneficiarioPorCpf(cpf);
         params.put("NOME_BENEFICIARIO",
                 (nomeBeneficiario != null && !nomeBeneficiario.isEmpty())
@@ -242,13 +242,14 @@ public class InformeRendimentosService {
 
         // dados do CAD (ou valores default)
         if (cad != null) {
-            params.put("NUM_CNPJ_DECLARANTE", nullSafe(cad.getNumCnpjDeclarante()));
+        	params.put("NUM_CNPJ_DECLARANTE", formatarCnpjSePossivel(cad.getNumCnpjDeclarante()));
             params.put("NOM_ORGAO", nullSafe(cad.getNomOrgao()));
             params.put("NOM_UNID_ORC", nullSafe(cad.getNomUnidOrc()));
             params.put("NOM_MUNICIPIO", nullSafe(cad.getNomMunicipio()));
             params.put("SG_UF", nullSafe(cad.getSgUf()));
             params.put("DAT_INI_VIG", cad.getDatIniVig());
             params.put("DAT_FIM_VIG", cad.getDatFimVig());
+            params.put("nomeResponsavelInformacoes", nullSafe(cad.getNomeResponsavel()));
         } else {
             params.put("NUM_CNPJ_DECLARANTE", "00.000.000/0000-00");
             params.put("NOM_ORGAO", "ÓRGÃO EXEMPLO");
@@ -362,7 +363,7 @@ public class InformeRendimentosService {
 
         // datas / executor / responsavel
         params.put("dataResponsavelInformacoes", new SimpleDateFormat("dd/MM/yyyy").format(new java.util.Date()));
-        params.put("nomeResponsavelInformacoes", "RESPONSÁVEL EXEMPLO");
+        
 
         // ANO_REF como String
         if (ctr != null && ctr.getAnoRef() != null) {
@@ -377,6 +378,44 @@ public class InformeRendimentosService {
         return params;
     }
 
+    private String formatarCpfSePossivel(String cpf) {
+        if (cpf == null || cpf.trim().isEmpty()) {
+            return "";
+        }
+
+        String numeros = cpf.replaceAll("\\D", "");
+
+        // CPF precisa ter exatamente 11 números
+        if (numeros.length() != 11) {
+            return cpf; // não dá pra formatar
+        }
+
+        return numeros.replaceFirst(
+            "(\\d{3})(\\d{3})(\\d{3})(\\d{2})",
+            "$1.$2.$3-$4"
+        );
+    }
+
+    private String formatarCnpjSePossivel(String cnpj) {
+        if (cnpj == null || cnpj.trim().isEmpty()) {
+            return "";
+        }
+
+        String numeros = cnpj.replaceAll("\\D", "");
+
+        // CNPJ precisa ter exatamente 14 números
+        if (numeros.length() != 14) {
+            return cnpj; // não dá pra formatar
+        }
+
+        return numeros.replaceFirst(
+            "(\\d{2})(\\d{3})(\\d{3})(\\d{4})(\\d{2})",
+            "$1.$2.$3/$4-$5"
+        );
+    }
+
+
+    
     private String extractObservacaoFromMainItems(List<ComprovanteItemDto> items) {
         if (items == null) return "";
         for (ComprovanteItemDto it : items) {

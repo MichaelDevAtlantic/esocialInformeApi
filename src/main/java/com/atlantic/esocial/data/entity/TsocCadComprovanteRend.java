@@ -30,4 +30,5 @@ public class TsocCadComprovanteRend {
 	private Calendar	datUltAtu;
 	private String	nomUsuUltAtu;
 	private String	nomProUltAtu;
+	private String nomeResponsavel;
 }
